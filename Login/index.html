@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>Login</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        
+        <h1>Login</h1>
+        
+        
+            <p>
+                Name: 
+                <label>
+                    <input name="name" id="name" size="25" type="text" maxlength="30" required>
+                </label>
+            </p>
+            <p>
+                Password: 
+                <label>
+                    <input id="passwd" name="passwd" id="passwd" size="25" type="password" maxlength="30" required>
+                </label>
+            </p>
+            <p>
+                <button type="button" onclick="checkLogin()">Login</button>
+            </p>
+        
+        
+
+        <p id="oops" hidden>Oops! Invalid Credentials</p>
+
+        <script src="./checkLogin.js"></script>
+    </body>
+</html>

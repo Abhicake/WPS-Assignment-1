@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Online Exam</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Welcome To the Online Exam Portal</h1>
+        
+        <div>
+            <a href="/Login/"><button type="button" >Login</button></a>
+            <p>Don't have an Account ?     
+                <a href="/SignUp/"><button type="button" >Sign Up</button></a>
+            </p>
+            
+        </div>
+        <script>
+            var path = window.location.href;
+            var page = "http://"+path.split("/")[2];
+            function takeToLogin(){
+                page+="/Login"
+                window.location.replace(page);    
+            }
+            function takeToSignUp(){
+                page+="/SignUp"
+                window.location.replace(page);    
+            }
+        </script>
+    </body>
+</html>

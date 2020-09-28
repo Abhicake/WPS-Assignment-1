@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SignUp</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Sign Up</h1>
+        
+        
+            <p>
+                Username: 
+                <label>
+                    <input id="name" name="name" size="25" type="text" maxlength="30" required>
+                </label>
+            </p>
+            <p>
+                Password: 
+                <label>
+                    <input id="passwd" name="passwd" size="25" type="password" maxlength="30" required>
+                </label>
+            </p>
+            <p>
+                <strong>What are you ? </strong>
+                <label>
+                    <input id="stud" name="Role" value="Stud" type="radio" required>
+                    Student
+                </label>
+                <label>
+                    <input name="Role" value="Teacher" type="radio">
+                    Teacher
+                </label> 
+            </p>
+            <p>
+                <button id="submit" type="button" onclick="SignUp()">SignUp</button>
+            </p>
+            <p id="user-exist" hidden >
+                User already exists try different username
+            </p>
+
+        
+        <script src="./SignUp.js"></script>
+    </body>
+</html>
