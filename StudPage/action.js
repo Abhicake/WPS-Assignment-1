@@ -14,12 +14,35 @@ var Op1chk = document.getElementById('op1');
 var Op2chk = document.getElementById('op2');
 var Op3chk = document.getElementById('op3');
 var Op4chk = document.getElementById('op4');
+var timeEle = document.getElementById('time');
+
+function startTimer(duration, display){
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10)
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+}
+
+function initTimer() {
+    var duration = 60 * parseInt(time);
+    startTimer(duration, timeEle);
+}
 
 function startExam(){
     document.getElementById('first').hidden = true;
     document.getElementById('mcq').hidden = false;
-
-   
+    timeEle.textContent="0"+time.toString()+":"+"00";
+    initTimer();
     Ques.textContent = examJSON[ques.toString()]["ques"];
     Op1.textContent = examJSON[ques.toString()]["op1"];
     Op2.textContent = examJSON[ques.toString()]["op2"];
