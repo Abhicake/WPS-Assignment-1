@@ -1,13 +1,103 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Teacher Page</title>
-        <meta charset="utf-8">
-    </head>
-    <body>
-        <h1>Welcome Teacher</h1>
-        
-        
-        
-    </body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>Online Exam</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <!-- Custom styles for this template -->
+    <link href="../mainStyles.css" rel="stylesheet">
+
+    <script type="text/javascript">
+      function ifExam(){
+        if(window.localStorage.getItem('exam')){
+            document.getElementById('isExam').hidden = false;
+        }
+      }
+    </script>
+    
+  </head>
+
+  <body onload="ifExam()">
+    <form class="form-signin" id="noNtime">
+      <div class="text-center mb-4">
+        <img class="mb-4" src="../assets/images/teacher.svg" alt="logo" width="150" height="150">
+        <h1 class="h3 mb-3 font-weight-normal">Welcome Teacher</h1>
+      </div>
+      <div id="isExam" class="alert alert-info" role="alert" hidden>
+        <strong>An Exam is already in progress</strong>
+      </div>
+      <div class="form-label-group">
+        <input type="number" id="noQues" class="form-control"  required autofocus>
+        <label for="noQues">Number of Questions</label>
+      </div>
+      
+      <div class="form-label-group">
+        <input type="number" id="time" class="form-control"  required>
+        <label for="time">Time in Minutes</label>
+      </div>
+      
+      <button class="btn btn-lg btn-primary btn-block" type="button" onclick="setExam()">Create New Exam</button>
+      <p class="alert alert-danger" role="alert" id="oops" hidden><strong>Oops! </strong>Invalid Values</p>
+      <p class="mt-5 mb-3 text-muted text-center">&copy; AbhiShek Marrivagu</p>
+    </form>
+
+    <form class="form-signin" id="setQues" hidden>
+      <div class="text-center mb-4">
+        <img class="mb-4" src="../assets/images/exam.svg" alt="logo" width="100" height="100">
+        <h1 class="h3 mb-3 font-weight-normal">Set your Exam</h1>
+      </div>
+      <div class="form-label-group">
+        <input type="text" id="ques" class="form-control"  required autofocus>
+        <label for="ques">Question</label>
+      </div>
+
+      <div class="form-label-group">
+        <input type="text" id="op1" class="form-control"  required autofocus>
+        <label for="op1">Option 1</label>
+      </div>
+      <div class="form-label-group">
+        <input type="text" id="op2" class="form-control"  required autofocus>
+        <label for="op2">Option 2</label>
+      </div>
+      <div class="form-label-group">
+        <input type="text" id="op3" class="form-control"  required autofocus>
+        <label for="op3">Option 3</label>
+      </div>
+      <div class="form-label-group">
+        <input type="text" id="op4" class="form-control"  required autofocus>
+        <label for="op4">Option 4</label>
+      </div>
+
+      <div class="form-label-group">
+        <input type="number" id="ans" class="form-control"  required autofocus>
+        <label for="ans">Answer</label>
+      </div>
+      
+      <button class="btn btn-lg btn-primary btn-block" type="button" onclick="takeQues()">Submit</button>
+      <p class="mt-5 mb-3 text-muted text-center">&copy; AbhiShek Marrivagu</p>
+      
+    </form>
+
+    <form class="form-signin" id="final" hidden>
+      <div class="text-center mb-4">
+        <img class="mb-4" src="../assets/images/teacher.svg" alt="logo" width="150" height="150">
+        <h1 class="h3 mb-3 font-weight-normal">You have set the Exam</h1>
+      </div>
+      <a href="./"><button class="btn btn-lg btn-primary btn-block" type="button">Return to Profile</button></a>
+    </form>
+
+
+   
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="./action.js"></script>
+  </body>
 </html>

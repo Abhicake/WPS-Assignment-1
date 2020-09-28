@@ -2,8 +2,8 @@ var path = window.location.href;
 var page = "http://"+path.split("/")[2];
 
 function SignUp(){
-    var user = document.getElementById('name').value;
-    var passwd = document.getElementById('passwd').value;
+    var user = document.getElementById('inputEmail').value;
+    var passwd = document.getElementById('inputPassword').value;
     var stud_or_teach = document.getElementById('stud').checked ? '1' : '2';
     
     if(window.localStorage.getItem(user)){
@@ -18,7 +18,8 @@ function SignUp(){
         }
         window.localStorage.setItem(user,JSON.stringify(person));
         var userExist = document.getElementById('user-exist');
-        userExist.innerHTML="Success! <button type=\"button\" onclick=\"takeToLogin()\">Login</button>";
+        userExist.className = "alert alert-success"
+        userExist.innerHTML="Success! <button class=\"btn btn-primary\" type=\"button\" onclick=\"takeToLogin()\">Login</button>";
         userExist.hidden = false;
 
     }
@@ -26,6 +27,5 @@ function SignUp(){
 }
 
 function takeToLogin(){
-    page+="/Login"
     window.location.replace(page);    
 }

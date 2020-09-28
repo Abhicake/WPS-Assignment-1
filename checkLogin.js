@@ -1,6 +1,6 @@
 function checkLogin(){
-    var user = document.getElementById('name').value
-    var passwd = document.getElementById('passwd').value;
+    var user = document.getElementById('inputEmail').value
+    var passwd = document.getElementById('inputPassword').value;
 
     if(window.localStorage.getItem(user)){
         person = JSON.parse(window.localStorage.getItem(user));
