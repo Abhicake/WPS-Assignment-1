@@ -28,7 +28,10 @@ function startTimer(duration, display){
         display.textContent = minutes + ":" + seconds;
 
         if (--timer < 0) {
-            timer = duration;
+            document.getElementById('mcq').hidden = true;
+            document.getElementById('scr').textContent = "Score : "+ score.toString();
+            document.getElementById('scoreboard').hidden = false;
+            return;
         }
     }, 1000);
 }
