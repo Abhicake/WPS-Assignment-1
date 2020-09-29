@@ -19,7 +19,7 @@ function SignUp(){
         window.localStorage.setItem(user,JSON.stringify(person));
         var userExist = document.getElementById('user-exist');
         userExist.className = "alert alert-success"
-        userExist.innerHTML="Success! <button class=\"btn btn-primary\" type=\"button\" onclick=\"takeToLogin()\">Login</button>";
+        userExist.innerHTML="Success! <a href=\"../\"><button class=\"btn btn-primary\" type=\"button\">Login</button></a>";
         userExist.hidden = false;
 
     }
